@@ -1,47 +1,28 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <div class="w-full min-h-screen overflow-hidden">
+        <the-header />
+        <app-input
+            :placeholder="'Search...'"
+            class="w-1/2 relative"
+        >
+            <magnifying-glass-icon class="absolute top-[35px] left-3 w-6 h-6 text-gray-300 focus:text-blue-500"/>
+        </app-input>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+        <product-card />
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
 </template>
 
+<script>
+import {defineComponent} from "vue";
+import TheHeader from "@/components/TheHeader.vue";
+import AppInput from "@/components/AppInput.vue";
+import {MagnifyingGlassIcon} from '@heroicons/vue/24/outline'
+import ProductCard from "@/components/ProductCard.vue";
+
+export default defineComponent({
+    components: {ProductCard, AppInput, TheHeader, MagnifyingGlassIcon}
+})
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
