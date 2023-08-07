@@ -1,5 +1,5 @@
 <template>
-    <header class="flex justify-between px-10 py-4 items-center bg-gray-200">
+    <header class="flex justify-between px-6 md:px-10 py-4 items-center bg-gray-200">
         <h1 class="items-center text-lg md:text-xl font-bold tracking-widest uppercase">
             texnomart
         </h1>

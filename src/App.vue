@@ -1,28 +1,30 @@
 <template>
     <div class="w-full min-h-screen overflow-hidden">
         <the-header />
-        <app-input
-            :placeholder="'Search...'"
-            class="w-1/2 relative"
-        >
-            <magnifying-glass-icon class="absolute top-[35px] left-3 w-6 h-6 text-gray-300 focus:text-blue-500"/>
-        </app-input>
-
-        <product-card />
+        <div class="px-6 md:px-10">
+            <product-card />
+        </div>
+        <the-footer />
     </div>
 </template>
 
 <script>
 import {defineComponent} from "vue";
 import TheHeader from "@/components/TheHeader.vue";
-import AppInput from "@/components/AppInput.vue";
 import {MagnifyingGlassIcon} from '@heroicons/vue/24/outline'
 import ProductCard from "@/components/ProductCard.vue";
+import TheFooter from "@/components/TheFooter.vue";
 
 export default defineComponent({
-    components: {ProductCard, AppInput, TheHeader, MagnifyingGlassIcon}
+    components: {TheFooter, ProductCard, TheHeader, MagnifyingGlassIcon}
 })
 </script>
 
-<style scoped>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 </style>
